@@ -2,9 +2,8 @@
 
 ## Unreleased
 
-### Added
-- Introduced CI and release workflows to automate testing and deployment processes, enhancing reliability and ease of use for developers integrating this action into their CI/CD pipelines.
+## [v1.0.1] - 2026-08-01
 
 ### Changed
-- Transitioned to a stable 1.0.0 release, ensuring a reliable and consistent API for developers using this library in their projects.
+- Updated release workflow to include AI-generated release notes and streamline versioning, improving the efficiency of release management (commit b2c9338).
 
