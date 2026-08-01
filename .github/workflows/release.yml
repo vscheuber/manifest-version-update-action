@@ -47,14 +47,10 @@ jobs:
           target-user-type: developer
           release-type: ${{ steps.version.outputs.action_release_type }}
           version: ${{ steps.version.outputs.newVersion }}
+          promote-release: true
+          release-tag: ${{ steps.version.outputs.newTag }}
+          release-notes-path: RELEASE_NOTES.md
           commit: false
-
-      - name: Write release notes from AI action output
-        env:
-          RELEASE_NOTES: ${{ steps.changelog.outputs.unreleased-content }}
-        run: |
-          set -euo pipefail
-          printf '%s\n' "$RELEASE_NOTES" > RELEASE_NOTES.md
 
       - name: Commit changelog and version
         run: |
