@@ -1,0 +1,50 @@
+name: 'Manifest Version Update Action'
+description: 'Update package.json and package-lock.json to a release version'
+author: 'Volker Scheuber'
+
+branding:
+  icon: 'package'
+  color: 'blue'
+
+inputs:
+  version:
+    description: 'Version to write into package.json'
+    required: true
+  package-json-path:
+    description: 'Path to package.json'
+    required: false
+    default: 'package.json'
+  package-lock-path:
+    description: 'Path to package-lock.json'
+    required: false
+    default: 'package-lock.json'
+  update-package-lock:
+    description: 'Whether to update package-lock.json as well'
+    required: false
+    default: 'true'
+  working-directory:
+    description: 'Working directory containing the manifest files'
+    required: false
+    default: '.'
+
+outputs:
+  packageJsonUpdated:
+    description: 'Whether package.json was updated'
+    value: ${{ steps.update.outputs.packageJsonUpdated }}
+  packageLockUpdated:
+    description: 'Whether package-lock.json was updated'
+    value: ${{ steps.update.outputs.packageLockUpdated }}
+
+runs:
+  using: 'composite'
+  steps:
+    - id: update
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+        PACKAGE_JSON_PATH: ${{ inputs.package-json-path }}
+        PACKAGE_LOCK_PATH: ${{ inputs.package-lock-path }}
+        UPDATE_PACKAGE_LOCK: ${{ inputs.update-package-lock }}
+        WORKING_DIRECTORY: ${{ inputs.working-directory }}
+      run: |
+        bash "${{ github.action_path }}/scripts/update-manifest.sh"
