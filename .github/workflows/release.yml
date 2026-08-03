@@ -51,6 +51,9 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Run unit tests
+        run: npm test
+
       - name: Update manifest version
         uses: ./
         with:
