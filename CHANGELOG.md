@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## [v1.0.4] - 2026-08-03
+
+### Added
+- Introduced unit tests for manifest version updates to ensure reliability and correctness of version management. This enhancement includes updates to the CI workflow to automatically run these tests. (commit 667aac6)
+- Implemented release preflight checks in the CI workflow to validate conditions before proceeding with a release, improving the release process's robustness. (commit 65eaaed)
+
 ## [v1.0.3] - 2026-08-02
 
 ### Changed
