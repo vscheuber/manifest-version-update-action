@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## [v1.0.5] - 2026-10-05
+
+### Changed
+- Internal pipeline update release. This release updates CI/CD or release automation under `.github/` without changing functional behavior.
+
 ## [v1.0.4] - 2026-08-03
 
 ### Added
@@ -23,3 +28,4 @@
 ### Changed
 - Updated release workflow to include AI-generated release notes and streamline versioning, improving the efficiency of release management (commit b2c9338).
 
+[v1.0.5]: https://github.com/vscheuber/manifest-version-update-action/compare/v1...v1.0.5

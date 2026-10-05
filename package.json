@@ -1,6 +1,6 @@
 {
   "name": "manifest-version-update-action",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "description": "GitHub Action that updates manifest versions",
   "scripts": {
